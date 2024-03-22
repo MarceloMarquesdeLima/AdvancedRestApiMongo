@@ -1,15 +1,12 @@
-using AdvancedRestApiMongo.Data;
 using AdvancedRestApiMongo.Interfaces;
 using AdvancedRestApiMongo.Profies;
 using AdvancedRestApiMongo.Services;
 using AspNetCoreRateLimit;
 using Microsoft.AspNetCore.OData;
-using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddDbContext<UserDbContext>(option=>option.UseSqlServer(@"Server=localhost,1433;Database=AdvancedRestApiMongo;User Id=sa;Password=1q2w3e4r@#$;TrustServerCertificate=True;"));
 
 builder.Services.AddMemoryCache();
 builder.Services.Configure<IpRateLimitOptions>((options)=>
